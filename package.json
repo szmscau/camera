@@ -1,7 +1,7 @@
 {
   "name": "ligh",
   "version": "1.0.0",
-  "description": "ligh",
+  "description": "lrw",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,6 +9,12 @@
     "build": "webpack --progress --colors --mode production",
     "dist": "webpack --progress --profile --colors --config webpack.prod.config.js"
   },
+  "files":[
+    "src",
+    "index.html",
+    "webpack.config.js",
+    "README.md"
+  ],
   "author": "szm",
   "license": "ISC",
   "devDependencies": {
@@ -38,5 +44,13 @@
     "react-dom": "^16.3.2",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/szmscau/ligh.git"
+  },
+  "bugs": {
+    "url": "https://github.com/szmscau/ligh/issues"
+  },
+  "homepage": "https://github.com/szmscau/ligh#readme"
 }
