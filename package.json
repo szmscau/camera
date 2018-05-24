@@ -1,6 +1,6 @@
 {
   "name": "ligh",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "lrw",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "build": "webpack --progress --colors --mode production",
     "dist": "webpack --progress --profile --colors --config webpack.prod.config.js"
   },
-  "files":[
+  "files": [
     "src",
     "index.html",
     "webpack.config.js",
