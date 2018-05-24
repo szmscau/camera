@@ -1,7 +1,7 @@
 {
-  "name": "blog",
+  "name": "ligh",
   "version": "1.0.0",
-  "description": "personal blog",
+  "description": "ligh",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
