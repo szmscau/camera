@@ -20,4 +20,4 @@ npm start
 # 打包配置：
 webpack.config.js
 
-访问地址: http://scaum.cn:1010
+### 建议使用firefox浏览器访问 访问地址: http://scaum.cn:1010
