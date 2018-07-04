@@ -954,8 +954,8 @@
 				$videoDom.append(canShot);
 				self.canShot = canShot;
 				$(canShot).addClass("ba-area-mask");
-				$(canShot).attr("height", self.vHeight);
-				$(canShot).attr("width", self.vWdith - self.scrWidth);
+				$(canShot).attr("height", self.vHeight + 1);
+				$(canShot).attr("width", self.vWdith - self.scrWidth + 1);
 				$(canShot).css({  								 //遮罩层定位
 					top: offTop,
 					left: offLeft,
@@ -1074,7 +1074,7 @@
 			// create inline function, called after image load (flash) or immediately (native)
 			var func = function () {
 				// render image if needed (flash)
-				if (this.src && this.width && this.height) {
+				if (this && this.src && this.width && this.height) {
 					if (params.canvas_height) {
 						context.drawImage(this, 0, 0, params.dest_width, params.canvas_height);
 					}

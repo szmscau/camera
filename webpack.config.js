@@ -64,6 +64,7 @@ module.exports = {
       filename: 'index.html',
       inject: 'body'
     }),
+    // ['import', { libraryName: 'antd', style: 'css' }],
     // new ExtractTextPlugin("css/style.css"),
   ]
 };
