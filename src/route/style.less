@@ -1,0 +1,44 @@
+:global{
+    html,body,#app{
+        height: 100%;
+    }
+    body{
+        margin:  0;         
+    }
+    .resume-container{
+        height: 100%;
+        background: -webkit-linear-gradient( top right, #0c425a ,white); /* Safari 5.1 - 6.0 */
+        background: -webkit-linear-gradient(right top, #0c425a ,white); /* Safari 5.1 - 6.0 */
+        background: -o-linear-gradient(top right, #0c425a, white); /* Opera 11.1 - 12.0 */
+        background: -moz-linear-gradient(top right, #0c425a, white); /* Firefox 3.6 - 15 */
+        background: linear-gradient(to bottom left, #0c425a, white); /* 标准的语法（必须放在最后*/
+    .resume-bg{
+        width: 800px;
+        margin: 0 auto;
+        padding-top: 5%;
+        // animation: showBg  1s ease-in  1 normal;
+        // -webkit-animation: showBg  1s ease-in  1 normal;
+    }
+    .resume-content{
+        width: 100%;
+        border: 1px solid gray;
+        height: 450px;
+        background: #fafafa;
+        box-shadow: #666 0px 0px 15px;
+        background-origin:content-box;
+    }
+    .br-block{
+        width: 100%;
+        height: 80px;
+    }
+}
+@keyframes showBg {
+    from{
+        padding-top:130px;
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+}
