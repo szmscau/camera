@@ -24,4 +24,56 @@
             width: 100px;
         }
     }
+    button[type=dashed]:hover{
+        border-color: #40a9ff;
+        color: #40a9ff;
+    }
+    button[type=primary]:hover{
+        border-color: #92cbfa;
+        color: #92cbfa;
+    }
+    button{
+        position: relative;
+        border-width: 0.5px;
+        border-radius: 3px;
+        min-width:60px; 
+        height: 35px;
+        font-size: 14px;
+        // span{
+        //     background:rgba(0, 0, 0, 0)
+        // }
+    }
+    button[type=primary]{
+        color:  #40a9ff;
+        border-color: #40a9ff;
+        background: rgba(0, 0, 0, 0);
+    }
+    button[type=dashed]{
+        color:  white;
+        border: dashed white 0.5px;
+        background: rgba(0, 0, 0, 0);
+    }
+    .camera-list{
+        margin-top:9px;
+        padding: 0;
+        border-radius: 4px;
+        box-shadow: 0 1px 6px rgba(0,0,0,.2);
+        list-style: none;
+        position: absolute;
+        min-width:120px;
+        color:black;
+        background: white;
+        text-align: left; 
+        li{
+            white-space: nowrap;
+            height: 26px;
+            line-height: 26px;
+            border-radius: 4px;
+            padding-left:12px;
+            width: 100%;
+        }
+        li:hover{
+            background: #a6cff1
+        }
+    }
 }

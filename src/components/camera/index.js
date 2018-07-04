@@ -1,7 +1,5 @@
 import React from 'react';
 import Webcam from '../../../webcam'
-import { Button, Dropdown, Menu, Toast } from 'antd';
-import 'antd/dist/antd.css';
 import './style.less';
 
 class Camera extends React.Component {
@@ -10,7 +8,8 @@ class Camera extends React.Component {
     }
     state = {
         webcamList: [],
-        imageList: []
+        imageList: [],
+        show: false
     }
     isIEBrowser = () => {
         var str = navigator.userAgent;
@@ -24,7 +23,10 @@ class Camera extends React.Component {
             return false;
         }
     }
-    handleChangeCamera = (e) => {
+    handleChangeCamera = (event, item) => {
+        this.setState({
+            show: false
+        })
         Webcam.reset();
         let height = document.getElementById('js-cameraHigh').offsetHeight;
         let width = document.getElementById('js-cameraHigh').offsetWidth;
@@ -35,7 +37,14 @@ class Camera extends React.Component {
             jpeg_quality: 80,
             // canvas_height:outerHeight
         });
-        Webcam.attach("js-cameraHigh", e.key);
+        Webcam.attach("js-cameraHigh", item.value);
+        event.preventDefault();
+        event.stopPropagation();
+    }
+    onBtnClick = (e) => {
+        this.setState({
+            show: true
+        })
     }
     onSnap = () => {
         let self = this;
@@ -113,20 +122,19 @@ class Camera extends React.Component {
         }
         else {
             //ie浏览器 object可设置height
-            Webcam.set({
-                width: width,
-                height: height,
-                image_format: 'jpeg',
-                jpeg_quality: 80,
-            });
+            // Webcam.set({
+            //     width: width,
+            //     height: height,
+            //     image_format: 'jpeg',
+            //     jpeg_quality: 80,
+            // });
             Webcam.on("live", function (e) {
-                $(".js-cameraHigh-snap").removeAttr("disabled");
-                $("js-subshot").removeAttr("disabled");
             });
-            Webcam.attach('.js-cameraHigh');
+            Webcam.attach('#js-cameraHigh');
             Webcam.on('load', function () {
                 // var dom = document.getElementById("webcam_movie_obj");
                 webcamList = Webcam.getMovie()._getCameraList();
+                console.log(webcamList);
                 var dataList = new Array();
                 for (var i = 0; i < webcamList.length; i++) {
                     var data = {};
@@ -134,29 +142,17 @@ class Camera extends React.Component {
                     data.value = i;
                     dataList.push(data);
                 }
-                $('.js-cameraList').combobox({
-                    indexValue: 0,
-                    placeholder: "请选择",
-                    dataSource: dataList,
-                    dataTextField: 'name',
-                    dataValueField: 'value',
-                    change: function (e) {
-                        that.$(".js-cameraHigh-snap").attr("disabled", "true");
-                        that.$(".js-subshot").attr("disabled", "true");
-                        Webcam.getMovie()._setCamera(this.value);
-                    }
-                });
+                this.setState({
+                    webcamList: dataList
+                })
             });
         }
     }
     renderMenu() {
         const webcamList = this.state.webcamList;
-        return (<Menu onClick={this.handleChangeCamera}>
-            {
-                webcamList.map((item) => (<Menu.Item key={item.value}>{item.name}</Menu.Item>))
-            }
-        </Menu>)
-
+        return (
+            webcamList.map((item) => (<li key={item.value} onClick={(e) => this.handleChangeCamera(e, item)}>{item.name}</li>))
+        )
     }
     renderImage = () => {
         const imageList = this.state.imageList;
@@ -170,7 +166,7 @@ class Camera extends React.Component {
         )
     }
     render() {
-        const menu = this.renderMenu();
+        const { show } = this.state;
         return (
             <React.Fragment>
                 <div className="camer-container">
@@ -178,14 +174,17 @@ class Camera extends React.Component {
                     </div>
                 </div>
                 <div className="btn-group">
-                    <Button type="primary" ghost onClick={this.onSnap}>拍照</Button>
-                    <Button type="dashed" onClick={this.shotImg} ghost>截图</Button>
+                    <button type="primary" onClick={this.onSnap}><span>拍照</span></button>
+                    <button type="dashed" onClick={this.shotImg} ><span>截图</span></button>
                     {/* <Button type="dashed" ghost>取消截图</Button> */}
-                    <Dropdown overlay={menu}>
-                        <Button type="dashed" ghost style={{ marginLeft: 8 }}>
-                            请选择摄像头
-                        </Button>
-                    </Dropdown>
+                    <button type="dashed" style={{ marginLeft: 8 }} onClick={this.onBtnClick} >
+                        <span>请选择摄像头</span>
+                        {
+                            show === true ? <ul className="camera-list">
+                                {this.renderMenu()}
+                            </ul> : ""}
+                    </button>
+
                 </div>
                 <div className="image-group">
                     {this.renderImage()}
