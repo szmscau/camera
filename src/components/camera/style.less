@@ -32,6 +32,10 @@
         border-color: #92cbfa;
         color: #92cbfa;
     }
+    div[type=dashed]:hover{
+        border-color: #40a9ff;
+        color: #40a9ff;
+    }
     button{
         position: relative;
         border-width: 0.5px;
@@ -44,13 +48,29 @@
         // }
     }
     button[type=primary]{
+        cursor: pointer;
         color:  #40a9ff;
-        border-color: #40a9ff;
+        border: #40a9ff solid 0.5px;
         background: rgba(0, 0, 0, 0);
     }
     button[type=dashed]{
+        cursor: pointer;
         color:  white;
         border: dashed white 0.5px;
+        background: rgba(0, 0, 0, 0);
+    }
+    div[type=dashed]{
+        cursor: pointer;
+        padding: 0 8px 0 8px;
+        position: relative;
+        border:white dashed 0.5px;
+        border-radius: 3px;
+        min-width:60px; 
+        height: 33px;
+        line-height: 33px;
+        font-size: 14px;
+        display: inline-block;
+        color:  white;
         background: rgba(0, 0, 0, 0);
     }
     .camera-list{

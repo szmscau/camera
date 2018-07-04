@@ -177,13 +177,13 @@ class Camera extends React.Component {
                     <button type="primary" onClick={this.onSnap}><span>拍照</span></button>
                     <button type="dashed" onClick={this.shotImg} ><span>截图</span></button>
                     {/* <Button type="dashed" ghost>取消截图</Button> */}
-                    <button type="dashed" style={{ marginLeft: 8 }} onClick={this.onBtnClick} >
+                    <div type="dashed" style={{ marginLeft: 8 }} onClick={this.onBtnClick} >
                         <span>请选择摄像头</span>
                         {
                             show === true ? <ul className="camera-list">
                                 {this.renderMenu()}
                             </ul> : ""}
-                    </button>
+                    </div>
 
                 </div>
                 <div className="image-group">
