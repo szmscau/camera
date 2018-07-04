@@ -1,7 +1,7 @@
 {
-  "name": "ligh",
-  "version": "2.0.0",
-  "description": "lrw",
+  "name": "camera",
+  "version": "1.0.0",
+  "description": "webcamera",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -49,10 +49,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/szmscau/ligh.git"
+    "url": "git+https://github.com/szmscau/camera.git"
   },
   "bugs": {
-    "url": "https://github.com/szmscau/ligh/issues"
+    "url": "https://github.com/szmscau/camera/issues"
   },
-  "homepage": "https://github.com/szmscau/ligh#readme"
+  "homepage": "https://github.com/szmscau/camera#readme"
 }

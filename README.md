@@ -1,17 +1,17 @@
-# EownWeb
-react脚手架
-简单、清晰明了的脚手架ligh,webpack+react技术栈
+# camera
+camera
+支持chrome、firefox、IE(8~11)的web摄像头[支持cmd规范]
 
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2"
+chrome 浏览器安全机制,本地开发localhost无安全限制,服务器需https协议
+firefox、IE无此约束
 
-状态管理方式可自行添加
-
-代码分割已添加,项目需要可使用
+支持WebAPI浏览器使用video+webapi
+其他使用flash
 
 步骤：
 npm install
 npm start 
-localhost:1010 访问
+访问localhost:1010
+
+打包配置：
+webpack.config.js
