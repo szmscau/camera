@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Index from './route/index';
+import Index from "./route/index";
 // const Menu1 = () => <h2>Menu1</h2>;
 
 // const Menu2 = () => <h2>Menu2</h2>;
@@ -24,7 +24,7 @@ import Index from './route/index';
 // const subMenu1 = () => <h3>subMenu1</h3>;
 // const subMenu2 = () => <h3>subMenu2</h3>;
 
-////////////////////////////////////////////////////////////
+// //////////////////////////////////////////////////////////
 // then our route config
 // const routes = [
 //   {

@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 // import Header from '../components/header'
-import Title from '../components/title';
-import Footer from '../components/footer';
-import Camera from '../components/camera';
-import './style.less';
+import Title from "../components/title";
+import Footer from "../components/footer";
+import Camera from "../components/camera";
+import "./style.less";
 
 
 class Index extends React.Component {
